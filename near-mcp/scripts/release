@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+## Build and update TOOLS.md
+bun run build
+
+# Create TOOLS.md with title and JSON output
+echo "# Available Tools" > TOOLS.md
+echo "" >> TOOLS.md
+echo '```json' >> TOOLS.md
+bun ./dist/near-mcp.js tools >> TOOLS.md
+echo '```' >> TOOLS.md
+bun run lint:fix
+bun run format:fix
+bun run lint
+bun run format
+
+## Bump version
+bun run changeset
+bun run changeset version

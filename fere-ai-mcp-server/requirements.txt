@@ -1,0 +1,13 @@
+# Python MCP (Master Control Program) dependencies
+pytest==7.4.0
+flask==2.3.3
+requests==2.31.0
+python-dotenv==1.0.0
+websockets==15.0.1
+httpx==0.26.0
+mcp==0.1.0
+typing-extensions==4.9.0
+
+# CLI dependencies
+click==8.1.8
+rich==13.6.0 

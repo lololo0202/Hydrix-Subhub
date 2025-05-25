@@ -1,0 +1,29 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - lnbitsUrl
+      - lnbitsAdminKey
+      - lnbitsReadKey
+    properties:
+      lnbitsUrl:
+        type: string
+        description: The URL for the LNbits service.
+      lnbitsAdminKey:
+        type: string
+        description: Admin key for LNbits.
+      lnbitsReadKey:
+        type: string
+        description: Read key for LNbits.
+      port:
+        type: number
+        default: 3000
+        description: Port number for the server.
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: { LNBITS_URL: config.lnbitsUrl, LNBITS_ADMIN_KEY: config.lnbitsAdminKey, LNBITS_READ_KEY: config.lnbitsReadKey, PORT: config.port.toString() } })

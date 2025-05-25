@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "alchemy-mcp": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {
+        "ALCHEMY_API_KEY": "KRdhdsBezoTMVajIknIxlXgBHc1Pprpw",
+        "PORT": "3000"
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

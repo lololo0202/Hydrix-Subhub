@@ -1,0 +1,66 @@
+{
+	"name": "bsv-mcp",
+	"module": "dist/index.js",
+	"type": "module",
+	"version": "0.0.36",
+	"license": "MIT",
+	"author": "satchmo",
+	"description": "A collection of Bitcoin SV (BSV) tools for the Model Context Protocol (MCP) framework",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/b-open-io/bsv-mcp"
+	},
+	"keywords": [
+		"bitcoin",
+		"bsv",
+		"bitcoin-sv",
+		"wallet",
+		"ordinals",
+		"blockchain",
+		"1sat-ordinals",
+		"explorer",
+		"block explorer"
+	],
+	"files": [
+		"dist/**/*.js",
+		"package.json",
+		"*.ts",
+		"tools/*.ts",
+		"tools/**/*.ts",
+		"prompts/*.ts",
+		"prompts/**/*.ts",
+		"resources/*.ts",
+		"resources/**/*.ts",
+		"LICENSE",
+		"README.md",
+		"CHANGELOG.md",
+		"smithery.yaml"
+	],
+	"bin": {
+		"bsv-mcp": "./dist/index.js"
+	},
+	"private": false,
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@bsv/sdk": "^1.4.20",
+		"@modelcontextprotocol/sdk": "^1.10.2",
+		"@types/node": "^22.15.2",
+		"bun": "^1.2.10",
+		"js-1sat-ord": "^0.1.81",
+		"mnee": "^2.0.0",
+		"satoshi-token": "^0.0.4",
+		"sigma-protocol": "^0.1.6",
+		"zod": "^3.24.3"
+	},
+	"scripts": {
+		"build": "bun build ./index.ts --outdir ./dist --target node",
+		"lint": "biome check .",
+		"lint:fix": "biome check . --write"
+	}
+}

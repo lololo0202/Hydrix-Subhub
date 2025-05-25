@@ -1,0 +1,35 @@
+{
+  "name": "kuru-mcp-server",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --esm src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "inspector": "npx @modelcontextprotocol/inspector@0.7.0 node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "crypto",
+    "kuru"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "MCP server for Kuru.io crypto exchange data",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "@types/express": "^5.0.1",
+    "@types/node-fetch": "^2.6.12",
+    "axios": "^1.8.4",
+    "cross-fetch": "^4.1.0",
+    "express": "^5.0.1",
+    "node-fetch": "^2.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}

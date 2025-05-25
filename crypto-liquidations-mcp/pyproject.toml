@@ -1,0 +1,10 @@
+[project]
+name = "crypto-liquidations-mcp"
+version = "0.1.0"
+description = "An MCP server that streams real-time cryptocurrency liquidation events from Binance"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.7.0",
+    "websockets>=15.0.1",
+]
